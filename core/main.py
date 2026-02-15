@@ -1,6 +1,8 @@
 from core.encryption import Encryption
 from core.decryption import Decryption
 from core.sendEmail import SendEmail
+from utils.sendEmail_logo import LOGO
+from utils.terminated_logo import TERMINATED_LOGO
 from pypdf.errors import FileNotDecryptedError
 from pathlib import Path
 
@@ -15,14 +17,18 @@ class StartProgram:
             self.get_information()
             if Path(self.user_file).exists():
                 if self.encrypt():
+                    print(LOGO)
                     send_email = input("Do you want to send the encrypted file? 'y' for yes and 'n' for no: ").lower()
                     if send_email == 'y':
                         self.sending_email()
                     else:
+                        print(TERMINATED_LOGO)
                         print("Program Terminated. File is saved. No email sent")
                 else:
+                    print(TERMINATED_LOGO)
                     print("No file located. Terminating Program...")
             else:
+                print(TERMINATED_LOGO)
                 print("No file locaed. Terminating Program...")
 
         elif self.user_choice == 'd':
@@ -30,8 +36,10 @@ class StartProgram:
             if Path(self.user_file).exists():
                 self.decrypt()
             else:
+                print(TERMINATED_LOGO)
                 print("No file located. Terminating Program...")
         else:
+            print(TERMINATED_LOGO)
             print("User choose to Exit")
 
     def encrypt(self):

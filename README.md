@@ -5,10 +5,10 @@ S-SPDF is a multifunctional tool that will ensure that your PDF have a great pro
 ---
 
 ### What's unique about it?
-💠 Easy to use
-💠 Plug and Play Type
-💠 Customizable at your own (optional)
-💠 Modular for easy understanding
+- 💠 Easy to use
+- 💠 Plug and Play Type
+- 💠 Customizable at your own (optional)
+- 💠 Modular for easy understanding
 
 ### How to Use?
 
